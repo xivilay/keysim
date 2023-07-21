@@ -85,7 +85,10 @@
       "KC_RCTL",
       "KC_LEFT",
       "KC_DOWN",
-      "KC_RGHT"
+      "KC_RGHT",
+      "KC_PSCR",
+      "KC_SLCK",
+      "KC_PAUS"
     ]
   ]
 }

@@ -56,7 +56,7 @@ const getPathArrows = (sx, sy, gutter) => {
   ]);
 };
 
-export default (layoutName, layoutJson, bezel) => {
+const holes = (layoutName, layoutJson, bezel) => {
   let holes = [];
   let gutter = 0.05;
   let w = layoutJson.width;
@@ -70,6 +70,7 @@ export default (layoutName, layoutJson, bezel) => {
   let f9 = getPathF9(sx + 11, sy, gutter);
   let nav = getPathNav(sx + 15.25, sy + 1.25, gutter);
   let arrows = getPathArrows(sx + 15.25, sy + 6.2, gutter);
+  let other = getSquarePath(sx + 15.25, sy, 3, 1, gutter);
 
   switch (layoutName) {
     case "100":
@@ -105,7 +106,7 @@ export default (layoutName, layoutJson, bezel) => {
       );
       break;
     case "80":
-      holes.push(esc, f1, f5, f9, nav, arrows);
+      holes.push(esc, f1, f5, f9, nav, arrows, other);
       holes.push(getSquarePath(sx, sy + 1.25, 15, 5, gutter));
       break;
     case "65":
@@ -166,3 +167,5 @@ export default (layoutName, layoutJson, bezel) => {
   }
   return holes;
 };
+
+export default holes;

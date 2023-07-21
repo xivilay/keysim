@@ -68,6 +68,7 @@ export default function BoardOptions() {
           label="Legend Style"
           selected={legendPrimaryStyle}
           options={[
+            { label: "Blanks", value: "blanks" },
             { label: "Cherry", value: "cherry" },
             { label: "SA", value: "sa", secondaryLabel: "(no subs)" },
           ]}

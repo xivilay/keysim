@@ -95,19 +95,19 @@ export const keyTexture = (opts) => {
     mainChar = l?.chars["KC_ENISO"];
   }
 
-  let modWord = !l.encoded && mainChar.length > 1; //mods use multi chacter words instead of symbols (sa)
+  let modWord = !l.encoded && mainChar?.length > 1; //mods use multi chacter words instead of symbols (sa)
   let subChar = SUBS[sublegend]?.chars[key] || "";
 
   //convert to unicode value if encoded for custom fonts
   mainChar =
-    l.encoded && mainChar.length > 1
+    l.encoded && mainChar?.length > 1
       ? String.fromCharCode(parseInt(mainChar, 16))
       : mainChar;
 
   //font size
   let fontScaler = 1;
-  if (mainChar["top"]) fontScaler = 1 / 2; //number keys 2 characters stacked
-  if (!mainChar["top"] && modWord) fontScaler = 1 / 4; // keys with full words for modifer text i.e. "Enter", "Alt", "Home"
+  if (mainChar?.["top"]) fontScaler = 1 / 2; //number keys 2 characters stacked
+  if (!mainChar?.["top"] && modWord) fontScaler = 1 / 4; // keys with full words for modifer text i.e. "Enter", "Alt", "Home"
   let fontSize = l.fontsize * (fontScaler + 0.25);
 
   //set font style
@@ -131,9 +131,9 @@ export const keyTexture = (opts) => {
     ent_off_y = 6;
   }
 
-  if (mainChar["top"]) {
-    ctx.fillText(mainChar.top, l.offsetX, l.offsetY + l.yOffsetTop);
-    ctx.fillText(mainChar.bottom, l.offsetX, l.offsetY + l.yOffsetBottom);
+  if (mainChar?.["top"]) {
+    ctx.fillText(mainChar?.top, l.offsetX, l.offsetY + l.yOffsetTop);
+    ctx.fillText(mainChar?.bottom, l.offsetX, l.offsetY + l.yOffsetBottom);
   } else {
     ctx.fillText(
       mainChar,

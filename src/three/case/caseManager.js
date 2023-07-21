@@ -5,7 +5,6 @@ import LAYOUTS from "../../config/layouts/layouts";
 import Util from "../../util/math";
 import case_1 from "./case_1";
 import case_2 from "./case_2";
-import badge from "./badge";
 import ColorUtil from "../../util/color";
 import { lightTexture } from "./lightTexture";
 
@@ -112,7 +111,6 @@ export default class CaseManager {
     this.loadTextures();
     this.createEnvCubeMap();
     this.createCaseShadow();
-    this.createBadge();
     this.createPlate();
     this.createCase();
 
@@ -141,7 +139,6 @@ export default class CaseManager {
       this.layout = LAYOUTS[state.case.layout];
       this.updateCaseGeometry();
       this.createCaseShadow();
-      this.createBadge();
       this.createPlate();
     });
 
@@ -208,22 +205,6 @@ export default class CaseManager {
       this.depth / 2 - this.bezel
     );
     this.group.add(this.plate);
-  }
-
-  createBadge() {
-    if (this.badgeMesh) this.group.remove(this.badgeMesh);
-    if (this.layout.width > 18) {
-      let w = this.layout.width;
-      let bw = 3;
-      bw = w > 19 ? 4 : bw;
-      bw = w > 21 ? 4 : bw;
-      let bx = 15.25;
-      bx = w > 19 ? 15.5 : bx;
-      bx = w > 21 ? 18.5 : bx;
-      this.badgeMesh = badge(bw, this.cubemap);
-      this.badgeMesh.position.x += bx;
-      this.group.add(this.badgeMesh);
-    }
   }
 
   createEnvCubeMap() {
