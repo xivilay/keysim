@@ -1,5 +1,5 @@
 import COLORWAYS from "../config/colorways/colorways";
-import initial_settings from "../config/settings_user_default.json";
+import { getSettings } from '../config/settings_user_default.js';
 import { updateCustomColorway } from "../store/slices/colorways";
 import * as colorConvert from "color-convert";
 import colorwayTemplate from "../config/colorways/colorway_template.json";
@@ -43,7 +43,7 @@ export default class ColorUtil {
 
   static get colorway() {
     return (
-      this.cachedColorway ?? this.getColorway(initial_settings.colorways.active)
+      this.cachedColorway ?? this.getColorway(getSettings().colorways.active)
     );
   }
 
@@ -60,7 +60,7 @@ export default class ColorUtil {
   }
 
   static getColorway(cw_name) {
-    cw_name = cw_name || initial_settings.colorways.active;
+    cw_name = cw_name || getSettings().colorways.active;
     let cw = COLORWAYS[cw_name];
     return cw || this.getUserColorway(cw_name) || "";
   }
@@ -130,7 +130,7 @@ export default class ColorUtil {
 
   static getCaseColor(cw_name) {
     let cw = this.getColorway(cw_name);
-    return cw?.case?.color || initial_settings.case.primaryColor;
+    return cw?.case?.color || getSettings().case.primaryColor;
   }
 
   static getColorwayTemplate(i) {

@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initial_settings from "../../config/settings_user_default.json";
+import { getSettings } from '../../config/settings_user_default';
 
 export const colorwaysSlice = createSlice({
   name: "colorways",
-  initialState: initial_settings.colorways,
+  initialState: getSettings().colorways,
   reducers: {
     setColorway: (state, action) => {
       state.active = action.payload;

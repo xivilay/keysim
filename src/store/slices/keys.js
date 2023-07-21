@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initial_settings from "../../config/settings_user_default.json";
+import { getSettings } from '../../config/settings_user_default';
 
 export const keysSlice = createSlice({
   name: "keys",
-  initialState: initial_settings.keys,
+  initialState: {...getSettings().keys},
   reducers: {
     toggleVisible: (state) => {
       state.visible = !state.visible;

@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initial_settings from "../../config/settings_user_default.json";
+import { getSettings } from '../../config/settings_user_default';
 
 export const caseSlice = createSlice({
   name: "case",
-  initialState: initial_settings.case,
+  initialState: {...getSettings().case},
   reducers: {
     toggleAutoColor: (state) => {
       state.autoColor = !state.autoColor;

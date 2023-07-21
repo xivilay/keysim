@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import initial_settings from "../../config/settings_user_default.json";
+import { getSettings } from '../../config/settings_user_default';
 
 export const settingsSlice = createSlice({
   name: "settings",
-  initialState: initial_settings.settings,
+  initialState: {...getSettings().settings},
   reducers: {
     setMode: (state, action) => {
       state.mode = action.payload;
