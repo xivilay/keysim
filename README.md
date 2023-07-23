@@ -1,5 +1,7 @@
 # KeySim
 
+design and test virtual 3d keyboards.
+
 https://xivilay.dev/kbd
 
 ## current fork diff
@@ -9,29 +11,16 @@ https://xivilay.dev/kbd
 * add blank keycaps as alternative options
 * add a couple of new themes 
 
-design and test virtual 3d keyboards.
 
 ## getting started
 
 ```
-nvm use
-npm install
-npm start
+yarn install
+yarn start
 ```
 
-## contributing
 
-**colorways:** Any PR's for new colorways will be accepted as long as there is a real physical version of that colorway, or an ongoing group buy.
 
-**layouts:** The goal of this project is not to recreate every possible keyboard layout, therefore I have no plans to add any new layouts myself. However PR's for new layouts will be accepted as long as they are not too similar to current layouts.
-
-## adding new colorways
-
-run the command `npm run create-colorway COLORWAY_ID "COLORWAY_NAME"` to create the file: `/src/config/colorways/colorway_COLORWAY_ID`. Edit this file directly or paste json from the advanced section of the editor tab.
-
-## A note on three.js version
-
-This project was built before the [depreciation](https://discourse.threejs.org/t/three-geometry-will-be-removed-from-core-with-r125/22401) of `THREE.Geometry` there are currently no plans to update three past version 125 as this would require a rewrite of the case and key geometry to support BufferGeometry.
 
 ## configuration
 
