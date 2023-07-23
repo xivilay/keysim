@@ -9,7 +9,7 @@ export default function About() {
       <div className={styles.about}>
         <p>
           <a
-            href="https://github.com/crsnbrt/keysim"
+            href="https://github.com/xivilay/keysim"
             rel="noopener noreferrer"
             target="_blank"
             className={styles.github}

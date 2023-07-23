@@ -1,6 +1,13 @@
 # KeySim
 
-https://keyboardsimulator.xyz/
+https://xivilay.dev/kbd
+
+## current fork diff
+
+* update packages and fix dependencies
+* fix 87 keyboard (remove badge)
+* add blank keycaps as alternative options
+* add a couple of new themes 
 
 design and test virtual 3d keyboards.
 
